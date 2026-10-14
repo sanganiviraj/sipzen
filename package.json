@@ -1,0 +1,60 @@
+{
+  "name": "sipzen",
+  "version": "1.0.0",
+  "description": "macOS Menu Bar hydration tracker",
+  "main": "electron/main.cjs",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "electron:start": "NODE_ENV=development electron .",
+    "app": "vite build && electron .",
+    "dist": "npm run build && electron-builder --mac dmg zip"
+  },
+  "dependencies": {
+    "canvas-confetti": "^1.9.4",
+    "lucide-react": "^1.16.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "@types/canvas-confetti": "^1.9.0",
+    "@types/node": "^22.13.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "@vitejs/plugin-react": "^4.3.4",
+    "electron": "^34.2.0",
+    "electron-builder": "^25.1.8",
+    "typescript": "^5.7.3",
+    "vite": "^6.1.0"
+  },
+  "build": {
+    "appId": "com.sipzen.desktop",
+    "productName": "Sipzen",
+    "directories": {
+      "output": "release"
+    },
+    "files": [
+      "dist/**/*",
+      "electron/**/*",
+      "assets/**/*",
+      "package.json"
+    ],
+    "mac": {
+      "category": "public.app-category.healthcare-fitness",
+      "target": [
+        "dmg",
+        "zip"
+      ],
+      "icon": "assets/icon.icns",
+      "identity": null,
+      "extendInfo": {
+        "LSUIElement": true
+      }
+    },
+    "dmg": {
+      "title": "Sipzen Installer",
+      "icon": "assets/icon.icns"
+    }
+  }
+}
