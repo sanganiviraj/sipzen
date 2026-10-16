@@ -2,6 +2,8 @@
 
 A minimal, elegant macOS menu bar hydration tracker and reminder built with Electron, React, and TypeScript.
 
+> Built with [REA](https://github.com/morluto/rea) — the entire app was built from a single prompt.
+
 ## Features
 
 - 🕒 **Menu Bar Resident**: Lives quietly in your macOS status bar without cluttering the Dock or Cmd+Tab switcher.
